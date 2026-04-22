@@ -4,31 +4,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
-    <!--
-      Temporarily disable cerner-smart-embeddable-lib
-      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
-    -->
     <title>Example-SMART-App</title>
   </head>
   <body>
-    <!-- Required JS files to enable this page to embed within an MPage -->
-    <!--
-      Temporarily disable cerner-smart-embeddable-lib
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
-      <script src='./lib/js/cerner-smart-embeddable-lib-1.0.0.min.js'></script>
-    -->
-
-    <!-- FHIR Client JS Library -->
-    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
-
-    <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
-    <!-- https://github.com/cerner/fhir-client-cerner-additions -->
-    <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js'></script>
     <script>
       FHIR.oauth2.authorize({
-        'client_id': '100e5944-05b3-4f30-a637-0a54ba50f10f',
-        'redirect_uri': 'https://kevin-freitas-wwt.github.io/smart-on-fhir-tutorial/example-smart-app/index.html',
-        'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
+        clientId: '100e5944-05b3-4f30-a637-0a54ba50f10f',
+        redirectUri: 'https://kevin-freitas-wwt.github.io/smart-on-fhir-tutorial/example-smart-app/index.html',
+        scope: 'patient/Patient.read patient/Observation.read launch online_access openid profile'
       });
     </script>
     <div class="spinner">
